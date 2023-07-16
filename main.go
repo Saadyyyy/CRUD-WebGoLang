@@ -1,10 +1,18 @@
 package main
 
 import (
-	"fmt"
+	"CRUD-WEB/config"
+	"CRUD-WEB/controllers/homecontroller"
+	"log"
+	"net/http"
 )
 
-
 func main() {
-	fmt.Println("Laode Saady")
+	//databse connection
+	config.ConnectDB()
+
+	http.HandleFunc("/", homecontroller.Welcome)
+
+	log.Println("Server Runing On Port 8080")
+	http.ListenAndServe(":8080", nil)
 }
