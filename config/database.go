@@ -9,14 +9,13 @@ import (
 
 var DB *sql.DB
 
-// ...
 func ConnectDB() {
-	db, err := sql.Open("mysql", "user:password@/dbname")
+	db, err := sql.Open("mysql", "root:@/go_products?parseTime=true")
 	if err != nil {
 		panic(err)
 	}
 
 	DB = db
 
-	log.Println("Database sucses")
+	log.Println("Database connected")
 }

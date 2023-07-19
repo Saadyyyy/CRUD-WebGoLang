@@ -1,12 +1,12 @@
 package homecontroller
 
 import (
-	"html/template"
 	"net/http"
+	"text/template"
 )
 
 func Welcome(w http.ResponseWriter, r *http.Request) {
-	temp, err := template.ParseFiles("view/home/index.html")
+	temp, err := template.ParseFiles("views/home/index.html")
 	if err != nil {
 		panic(err)
 	}
